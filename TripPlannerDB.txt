@@ -1,0 +1,57 @@
+--CREATE TABLE GCuser
+--( 
+-- [UserID] INT NOT NULL PRIMARY KEY ,
+-- [FirstName] NVARCHAR(20) NOT NULL,
+-- [LastName] NVARCHAR(20) NOT NULL,
+-- [Address] NVARCHAR(80) NOT NULL,
+-- [PhoneNumber] INT NOT NULL,
+-- [DOB] DATE NOT NULL,
+-- [Email] NVARCHAR(80)
+
+
+--);
+
+--CREATE TABLE PassPort
+--(
+--	[PassPortID] INT NOT NULL PRIMARY KEY,
+--	[ExpirationDate] DATE NOT NULL,
+--	[Address]NVARCHAR(80) NOT NULL,
+--	--[UserID] INT FOREIGN KEY REFERENCES GCuser(UserID)
+--);
+
+--CREATE TABLE Trips 
+--( 
+--	[TripID] INT NOT NULL PRIMARY KEY,
+--	[Budget] DECIMAL NOT NULL,
+--	[Origin] NVARCHAR(80),
+--	[Destination] NVARCHAR(80),
+--	[StartDate] DATE,
+--	[EndDate] DATE
+
+--);
+
+--CREATE TABLE Hotel
+--(
+--	[HotelID]INT NOT NULL PRIMARY KEY,
+--	[HotelName] NVARCHAR(50) NOT NULL,
+--	[HotelAddress] NVARCHAR(80) NOT NULL,
+--	[RatePerNight] DECIMAL NOT NULL,
+
+--);
+
+--ALTER TABLE Passport ADD FK_UserID INT FOREIGN KEY REFERENCES GCuser(UserID);
+--ALTER TABLE Hotel ADD FK_CustomerID INT FOREIGN KEY REFERENCES GCuser(UserID);
+--ALTER TABLE Trips ADD FK_UserID INT FOREIGN KEY REFERENCES GCuser(UserID);
+--ALTER TABLE Trips ADD FK_HotelID INT FOREIGN KEY REFERENCES Hotel(HotelID);
+
+
+--ALTER TABLE GCuser ADD FK_PassPortID INT FOREIGN KEY REFERENCES PassPort(PassPortID);
+
+--CREATE TABLE HotelChanges
+--( 
+-- [RecordID]INT NOT NULL PRIMARY KEY,
+ 
+--);
+
+--ALTER TABLE HotelChanges ADD FK_TripID INT FOREIGN KEY REFERENCES Trips(TripID);
+--ALTER TABLE HotelChanges ADD FK_HotelID INT FOREIGN KEY REFERENCES Hotel(HotelID);
